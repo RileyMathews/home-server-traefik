@@ -1,0 +1,13 @@
+http:
+  routers:
+    router-homeassistant:
+      rule: Host(`ha.home.rileymathews.com`)
+      service: service-homeassistant
+      tls:
+        certResolver: le
+
+  services:
+    service-homeassistant:
+      loadBalancer:
+        servers:
+          - url: http://127.0.0.1:8123

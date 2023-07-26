@@ -1,0 +1,13 @@
+http:
+  routers:
+    dashboard:
+      rule: Host(`traefik.home.rileymathews.com`)
+      service: api@internal
+      middlewares:
+        - test-auth
+      tls:
+        certResolver: le
+  middlewares:
+    test-auth:
+      basicAuth:
+        usersFile: "/etc/traefik/usersfile"

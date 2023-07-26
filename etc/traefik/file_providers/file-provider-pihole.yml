@@ -1,0 +1,13 @@
+http:
+  routers:
+    router-pihole:
+      rule: Host(`pihole.home.rileymathews.com`)
+      service: service-pihole
+      tls:
+        certResolver: le
+
+  services:
+    service-pihole:
+      loadBalancer:
+        servers:
+          - url: http://127.0.0.1:8089

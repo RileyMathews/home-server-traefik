@@ -1,0 +1,36 @@
+entryPoints:
+  web:
+    address: :80
+    http:
+      redirections:
+        entryPoint:
+          to: web-secure
+          scheme: https
+    proxyProtocol:
+      trustedIPs:
+        - 10.1.10.2
+
+  web-secure:
+    address: :443
+    proxyProtocol:
+      trustedIPs:
+        - 10.1.10.2
+
+providers:
+  docker:
+    endpoint: unix:///var/run/docker.sock
+    watch: true
+    exposedByDefault: false
+  file:
+    directory: /etc/traefik/file_providers
+
+api:
+  dashboard: true
+
+certificatesResolvers:
+  le:
+    acme:
+      email: riley@rileymathews.com
+      storage: /etc/traefik/acme.json
+      httpChallenge:
+        entryPoint: web
