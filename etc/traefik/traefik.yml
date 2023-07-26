@@ -15,6 +15,9 @@ entryPoints:
     proxyProtocol:
       trustedIPs:
         - 10.1.10.2
+  
+  gitea_ssh:
+    address: :222
 
 providers:
   docker:
