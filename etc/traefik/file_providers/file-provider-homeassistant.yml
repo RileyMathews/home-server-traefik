@@ -1,10 +1,10 @@
 http:
   routers:
     router-homeassistant:
-      rule: Host(`ha.home.rileymathews.com`)
+      rule: Host(`ha.home.rileymathews.com`) || Host(`home.rileymathews.com`)
       service: service-homeassistant
       tls:
-        certResolver: le
+        certResolver: cf 
 
   services:
     service-homeassistant:
