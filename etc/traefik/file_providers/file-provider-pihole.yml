@@ -1,7 +1,7 @@
 http:
   routers:
     router-pihole:
-      rule: Host(`pihole.home.rileymathews.com`)
+      rule: Host(`pihole.rileymathews.com`)
       service: service-pihole
       tls:
         certResolver: le
