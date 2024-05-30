@@ -1,4 +1,5 @@
 # Traefik
 acme.json
+cfacme.json
 usersfile
 .env.secret

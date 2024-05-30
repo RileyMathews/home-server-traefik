@@ -44,7 +44,7 @@ certificatesResolvers:
   cf:
     acme:
       email: riley@rileymathews.com
-      storage: acme.json
+      storage: /etc/traefik/cfacme.json
       dnsChallenge:
         provider: cloudflare
         resolvers:
