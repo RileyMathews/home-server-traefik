@@ -7,14 +7,14 @@ entryPoints:
           to: web-secure
           scheme: https
     proxyProtocol:
-      trustedIPs:
-        - 10.1.10.2
+      # this is probably still ok. This just means that any incoming request
+      # from HA Proxy will use the actual client IP instead of the proxys IP (I think)
+      insecure: true
 
   web-secure:
     address: :443
     proxyProtocol:
-      trustedIPs:
-        - 10.1.10.2
+      insecure: true
   
   gitea_ssh:
     address: :222

@@ -3,3 +3,4 @@ acme.json
 cfacme.json
 usersfile
 .env.secret
+traefik.env
