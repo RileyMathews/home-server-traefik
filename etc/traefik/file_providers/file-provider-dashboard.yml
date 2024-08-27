@@ -1,12 +1,12 @@
 http:
   routers:
     dashboard:
-      rule: Host(`traefik.rileymathews.com`)
+      rule: Host(`scotty.rileymathews.com`)
       service: api@internal
       middlewares:
         - test-auth
       tls:
-        certResolver: le
+        certResolver: cf
   middlewares:
     test-auth:
       basicAuth:

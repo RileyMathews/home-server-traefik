@@ -4,7 +4,7 @@ http:
       rule: Host(`ha.home.rileymathews.com`) || Host(`home.rileymathews.com`)
       service: service-homeassistant
       tls:
-        certResolver: le 
+        certResolver: cf
 
   services:
     service-homeassistant:
